@@ -59,7 +59,6 @@ function Home() {
         },
     ];
 
-    const [currentSlide, setCurrentSlide] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
@@ -81,21 +80,21 @@ function Home() {
     };
 
     return (
-        <div className="bg-background-light text-gray-900">
+        <div className="bg-neutral-50 text-neutral-900">
             {/* Hero Section */}
             <motion.section
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="bg-gradient-to-b from-gray-800 to-gray-700 text-white py-20"
+                className="bg-gradient-to-b from-primary-700 to-primary-600 text-white py-24"
             >
                 <div className="container mx-auto text-center px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Your Brand</h1>
-                    <p className="text-lg md:text-xl mb-8">Leading the way in modern solutions for your business</p>
+                    <h1 className="font-display text-5xl md:text-6xl font-bold mb-6">Welcome to Your Brand</h1>
+                    <p className="text-xl md:text-2xl mb-10">Leading the way in modern solutions for your business</p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-secondary-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-secondary-600 transition"
+                        className="bg-accent-500 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-accent-600 transition duration-300 text-lg font-semibold"
                     >
                         Get Started
                     </motion.button>
@@ -103,9 +102,9 @@ function Home() {
             </motion.section>
 
             {/* Carousel Section */}
-            <section className="py-16 bg-gray-100">
+            <section className="py-20 bg-neutral-100">
                 <div className="container mx-auto px-4 relative">
-                    <div className="relative overflow-hidden rounded-lg shadow-xl">
+                    <div className="relative overflow-hidden rounded-2xl shadow-xl">
                         <AnimatePresence initial={false}>
                             <motion.div
                                 key={currentSlide}
@@ -113,7 +112,7 @@ function Home() {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="h-[50vh] md:h-[60vh] relative"
+                                className="h-[60vh] md:h-[70vh] relative"
                             >
                                 <img
                                     className="h-full w-full object-cover"
@@ -121,9 +120,9 @@ function Home() {
                                     alt={`${slides[currentSlide].title} slide`}
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white">
-                                    <div className="text-center p-4">
-                                        <h2 className="text-2xl md:text-3xl font-bold mb-4">{slides[currentSlide].title}</h2>
-                                        <p className="text-sm md:text-base mx-auto max-w-lg">{slides[currentSlide].description}</p>
+                                    <div className="text-center p-6 md:p-8">
+                                        <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">{slides[currentSlide].title}</h2>
+                                        <p className="text-lg md:text-xl mx-auto max-w-2xl">{slides[currentSlide].description}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -133,7 +132,7 @@ function Home() {
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition"
+                            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-3 shadow-lg hover:bg-opacity-100 transition"
                             onClick={handlePrevSlide}
                         >
                             {/* SVG for prev button */}
@@ -141,7 +140,7 @@ function Home() {
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition"
+                            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-3 shadow-lg hover:bg-opacity-100 transition"
                             onClick={handleNextSlide}
                         >
                             {/* SVG for next button */}
@@ -149,13 +148,13 @@ function Home() {
                     </div>
 
                     {/* Slide Indicators */}
-                    <div className="flex justify-center mt-4 space-x-2">
+                    <div className="flex justify-center mt-6 space-x-3">
                         {slides.map((_, index) => (
                             <motion.button
                                 key={index}
                                 whileHover={{ scale: 1.2 }}
                                 whileTap={{ scale: 0.8 }}
-                                className={`h-3 w-3 rounded-full ${currentSlide === index ? 'bg-gray-800' : 'bg-gray-400'}`}
+                                className={`h-3 w-3 rounded-full ${currentSlide === index ? 'bg-primary-600' : 'bg-neutral-400'}`}
                                 onClick={() => setCurrentSlide(index)}
                             ></motion.button>
                         ))}
@@ -164,18 +163,18 @@ function Home() {
             </section>
 
             {/* Features Section */}
-            <section className="py-16 bg-white">
+            <section className="py-20 bg-white">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold mb-12">Our Features</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <h2 className="font-display text-4xl font-bold mb-16 text-neutral-900">Our Features</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {[1, 2, 3].map((feature) => (
                             <motion.div
                                 key={feature}
                                 whileHover={{ scale: 1.05 }}
-                                className="p-6 border rounded-lg shadow-md transition"
+                                className="p-8 bg-neutral-50 rounded-xl shadow-lg transition duration-300"
                             >
-                                <h3 className="text-xl font-semibold mb-4">Feature {feature}</h3>
-                                <p className="text-gray-600">A brief description of what this feature entails.</p>
+                                <h3 className="text-2xl font-semibold mb-4 text-primary-600">Feature {feature}</h3>
+                                <p className="text-neutral-600">A brief description of what this feature entails and how it benefits our users.</p>
                             </motion.div>
                         ))}
                     </div>
@@ -187,15 +186,15 @@ function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="py-20 bg-gradient-to-r from-gray-600 to-gray-500 text-white text-center"
+                className="py-24 bg-gradient-to-r from-secondary-600 to-secondary-500 text-white text-center"
             >
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Take Your Business to the Next Level?</h2>
-                    <p className="text-lg md:text-xl mb-8">Join us today and start your journey towards success.</p>
+                    <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Ready to Take Your Business to the Next Level?</h2>
+                    <p className="text-xl md:text-2xl mb-10">Join us today and start your journey towards success.</p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-accent-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-accent-600 transition"
+                        className="bg-accent-500 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-accent-600 transition duration-300 text-lg font-semibold"
                     >
                         Sign Up Now
                     </motion.button>
