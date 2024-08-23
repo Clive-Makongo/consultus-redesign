@@ -1,4 +1,11 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer'
+import Home from './container/Home';
+import AboutUs from './container/AboutUs';
+import ContactUs from './container/ContactUs';
+import Goals from './container/Goals';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,27 +14,17 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        
-      </div>
-      <h1 className='bg-red-900 p-50'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className='bg-red-900'>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        <p className='bg-red-900'>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/goals" element={<Goals />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
-}
+};
 
 export default App
