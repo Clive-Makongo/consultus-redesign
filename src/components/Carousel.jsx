@@ -16,9 +16,7 @@ export default function Carousel() {
         {
             id: 1,
             title: 'Green Jobs',
-            description: `Consultus Global is driving green jobs to improve energy and raw material efficiency, 
-                          limit greenhouse gas emissions, minimize waste and pollution, protect and restore ecosystems, 
-                          and help support adaptation to the impacts of climate change.`,
+            description: `Consultus Global is driving green jobs to improve energy and raw material efficiency, limit greenhouse gas emissions, minimize waste and pollution, protect and restore ecosystems, and help support adaptation to the impacts of climate change. `,
             imageLg: GreenJobs,
             imageXs: GreenJobsXS,
         },
@@ -35,7 +33,9 @@ export default function Carousel() {
             id: 3,
             title: 'Climate Actions and Resilient Cities',
             description: `One of our main goals is to produce projects that exactly coincide with the aim of creating 
-                          cities that are resistant to climate change.`,
+                          cities that are resistant to climate change.
+
+                          Our team is well-versed in EU climate policies, working collaboratively to address climate change challenges through innovative strategies.`,
             imageLg: ClimateAction,
             imageXs: ClimateActionXS,
         },
@@ -83,7 +83,7 @@ export default function Carousel() {
     return (
         <>
             {/* Carousel Section */}
-            < section className="py-16 bg-gray-100" >
+            < section className="bg-gray-100 py-16" >
                 <div className="container mx-auto px-4 relative">
                     <div className="relative overflow-hidden rounded-lg shadow-xl">
                         <AnimatePresence initial={false}>

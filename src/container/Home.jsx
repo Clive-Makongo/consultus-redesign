@@ -1,33 +1,33 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Carousel from '../components/Carousel';
-
+import Hero from    '../components/Hero'
 
 function Home() {
   
 
     return (
-        <div className="bg-background-light text-gray-900">
+        <div className="bg-gray-100 text-gray-900">
             {/* Hero Section */}
-            <motion.section
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="bg-gradient-to-b from-gray-800 to-gray-700 text-white py-20"
-            >
-                <div className="container mx-auto text-center px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Your Brand</h1>
-                    <p className="text-lg md:text-xl mb-8">Leading the way in modern solutions for your business</p>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-secondary-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-secondary-600 transition"
-                    >
-                        Get Started
-                    </motion.button>
-                </div>
-            </motion.section>
+            <Hero/>
 
+            {/* What We Do Header */}
+            <section className="py-16 bg-gray-100">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-4xl font-bold mb-8 text-gray-800">
+                        <span className="relative inline-block">
+                            <span className="relative z-10">What We Do</span>
+                            <span className="absolute inset-x-0 bottom-0 h-2 bg-gray-500 rounded-md"></span>
+                        </span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        Discover the services and solutions we offer to help your business thrive in a competitive market.
+                    </p>
+                </div>
+            </section>
+
+            {/* Carousel */}
+            <Carousel />
 
             {/* Features Section */}
             <section className="py-16 bg-white">
@@ -47,8 +47,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* Carousel */}
-            <Carousel/>
+            
             {/* Call to Action Section */}
             <motion.section
                 initial={{ opacity: 0 }}
