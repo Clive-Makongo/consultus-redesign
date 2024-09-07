@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import GreenJobs from '../assets/images/Green-Jobs.png';
 import GreenJobsXS from '../assets/images/green-jobs-xs.png';
 import WaterManagement from '../assets/images/water-management-cli.png';
@@ -117,6 +118,7 @@ export default function Carousel() {
                             onClick={handlePrevSlide}
                         >
                             {/* SVG for prev button */}
+                            <ChevronLeftIcon className="h-6 w-6" />
                         </motion.button>
                         <motion.button
                             whileHover={{ scale: 1.1 }}
@@ -125,6 +127,7 @@ export default function Carousel() {
                             onClick={handleNextSlide}
                         >
                             {/* SVG for next button */}
+                            <ChevronRightIcon className="h-6 w-6" />
                         </motion.button>
                     </div>
 

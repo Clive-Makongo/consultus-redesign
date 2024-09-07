@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import reactLogo from '../assets/react.svg'; // Replace with your logo path
-
+import icon from '../assets/images/favicon.ico'
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -11,7 +11,7 @@ function Navbar() {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/">
-                            <img src={reactLogo} alt="Logo" className="h-8 w-8" />
+                            <img src={icon} alt="Logo" className="h-8 w-8" />
                         </Link>
                     </div>
                     <div className="hidden md:flex space-x-4 items-center">

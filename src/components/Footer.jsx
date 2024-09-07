@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/favicon.ico'
 
 function Footer() {
     return (
@@ -8,8 +9,8 @@ function Footer() {
                     {/* Logo and About Section */}
                     <div>
                         <Link to="/" className="flex items-center mb-4">
-                            <img src="/vite.svg" alt="Logo" className="h-10 w-10 mr-2" /> {/* Replace with your logo */}
-                            <span className="text-2xl font-bold">Your Brand</span>
+                            <img src={logo} alt="Logo" className="h-10 w-10 mr-2" /> {/* Replace with your logo */}
+                            <span className="text-2xl font-bold">ConsultUs Global</span>
                         </Link>
                         <p className="text-gray-400">
                             Your Brand is committed to providing the best services and products to our customers.
@@ -35,24 +36,7 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4">Services</h4>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 1</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 2</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 3</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 4</Link>
-                            </li>
-                        </ul>
-                    </div>
+                   
 
                     {/* Contact Information */}
                     <div>
