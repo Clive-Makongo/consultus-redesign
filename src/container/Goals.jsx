@@ -1,11 +1,11 @@
 import React from "react";
-
+import Accordion from '../components/Accordion';
 export default function Goals() {
 
     return (
         <>
             <div>
-                Goals
+                <Accordion/>
             </div>
         </>
     )
