@@ -19,9 +19,7 @@ function Home() {
                             <span className="relative z-10">What We Do</span>
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-black max-w-3xl mx-auto">
-                        Discover the services and solutions we offer to help your business thrive in a competitive market.
-                    </p>
+                    
                 </div>
             </section>
 

@@ -25,22 +25,13 @@ export default function Hero() {
                         className="text-4xl md:text-5xl font-bold mb-4 rounded-lg"
                         style={{
                             backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            padding: '5px 10px',
+                            padding: '5px 1px',
                             borderRadius: '5px',
                         }}
                     >
-                        Welcome to ConsultUs Global
+                        ConsultUs Global
                     </h1>
-                    <p
-                        className="text-lg md:text-xl mb-8"
-                        style={{
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            padding: '5px 10px',
-                            borderRadius: '5px',
-                        }}
-                    >
-                        Leading the way in modern solutions for Engineering</p>
-
+                    
                     
                 </div>
             </motion.section>

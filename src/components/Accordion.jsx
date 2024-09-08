@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const AccordionItem = ({ title, children }) => {
@@ -6,21 +7,44 @@ const AccordionItem = ({ title, children }) => {
 
     return (
         <div className="border-b border-gray-200">
-            <button
+            <motion.button
                 className="flex justify-between items-center w-full py-4 px-6 text-left"
                 onClick={() => setIsOpen(!isOpen)}
+                whileHover={{ backgroundColor: '#f3f4f6' }}
+                whileTap={{ scale: 0.98 }}
             >
                 <span className="font-medium">{title}</span>
-                {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
-            {isOpen && <div className="p-6">{children}</div>}
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <ChevronDown size={20} />
+                </motion.div>
+            </motion.button>
+            <AnimatePresence initial={false}>
+                {isOpen && (
+                    <motion.div
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                            open: { opacity: 1, height: 'auto' },
+                            collapsed: { opacity: 0, height: 0 }
+                        }}
+                        transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    >
+                        <div className="p-6">{children}</div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
 
+
 const Accordion = ({ items }) => {
     return (
-        <div className="border border-gray-200 rounded-md">
+        <div className="border border-gray-200 rounded-md shadow-md">
             {items.map((item, index) => (
                 <AccordionItem key={index} title={item.title}>
                     {item.content}
