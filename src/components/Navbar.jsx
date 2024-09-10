@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import icon from '../assets/images/favicon.ico';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     const menuVariants = {
         closed: {
@@ -51,10 +52,13 @@ const Navbar = () => {
                                 key={item}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
+                                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`)
+                                        ? 'bg-slate-700'
+                                        : ''
+                                    }`}
                             >
                                 <Link
                                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
-                                    className="text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     {item}
                                 </Link>
@@ -105,7 +109,10 @@ const Navbar = () => {
                                 <motion.div key={item} variants={menuItemVariants}>
                                     <Link
                                         to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
-                                        className="text-white block px-3 py-2 rounded-md text-base font-medium"
+                                        className={`text-white block px-3 py-2 rounded-md text-base font-medium ${location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`)
+                                                ? 'bg-blue-500'
+                                                : ''
+                                            }`}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {item}

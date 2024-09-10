@@ -13,7 +13,7 @@ function Footer() {
                             <span className="text-2xl font-bold">ConsultUs Global</span>
                         </Link>
                         <p className="text-gray-400">
-                            Your Brand is committed to providing the best services and products to our customers.
+                            
                         </p>
                     </div>
 
@@ -41,10 +41,14 @@ function Footer() {
                     {/* Contact Information */}
                     <div>
                         <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-                        <p className="text-gray-400">123 Street Name, City, State, Zip</p>
-                        <p className="text-gray-400">Email: info@yourbrand.com</p>
-                        <p className="text-gray-400">Phone: (123) 456-7890</p>
+                        <p className="text-gray-400"><strong>Ankara Office</strong></p>
+                        <p className="text-gray-400">KIZILIRMAK MAH.</p>
+                        <p className="text-gray-400">1443 CAD. NO:25 B</p>
+                        <p className="text-gray-400">IÇ KAPI NO: 8</p>
+                        <p className="text-gray-400">ÇANKAYA/ANKARA/TÜRKIYE</p>
+                        <p className="text-gray-400">Email: info@consultus.com.tr</p>
                     </div>
+
                 </div>
 
                 {/* Social Media Links */}
