@@ -7,12 +7,12 @@ function Home() {
   
 
     return (
-        <div className="bg-gray-900 text-gray-900">
+        <div className="bg-gray-100 text-gray-900">
             {/* Hero Section */}
             <Hero/>
 
             {/* What We Do Header */}
-            <section className="py-10 bg-gray-900">
+            <section className="py-10 bg-gray-100">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-8 text-gray-800">
                         <span className="relative inline-block">

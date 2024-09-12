@@ -21,7 +21,7 @@ export default function AboutCard({ title, description, color, image }) {
     );
 
     const CardDescription = ({ children }) => (
-        <p className="text-sm text-gray-600">{children}</p>
+        <p className="text-2xl font-mono text-gray-600">{children}</p>
     );
 
     const FeatureCard = ({ title, description, color, image }) => (
@@ -36,7 +36,7 @@ export default function AboutCard({ title, description, color, image }) {
                     <CardTitle>{title}</CardTitle>
                     <div className='grid grid-cols-2'>
                         <CardImage>{image}</CardImage>
-                        <CardDescription className="text-white font-mono text-5xl">{description}</CardDescription>
+                        <CardDescription>{description}</CardDescription>
                     </div>
                     </CardHeader>
                 </Card>

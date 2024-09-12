@@ -84,7 +84,7 @@ export default function Carousel() {
     return (
         <>
             {/* Carousel Section */}
-            < section className="bg-gray-900 py-16" >
+            < section className="bg-gray-100 py-16" >
                 <div className="container mx-auto px-4 relative">
                     <div className="relative overflow-hidden rounded-lg shadow-xl">
                         <AnimatePresence initial={false}>
