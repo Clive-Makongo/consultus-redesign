@@ -26,16 +26,18 @@ export default function AboutCard({ title, description, color, image }) {
 
     const FeatureCard = ({ title, description, color, image }) => (
         <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.015 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full"
+            className="w-full h-[20vw]"
         >
 
                 <Card className={`${color} text-white hover:shadow-lg transition-shadow`}>
                     <CardHeader>
-                        <CardTitle>{title}</CardTitle>
+                    <CardTitle>{title}</CardTitle>
+                    <div className='grid grid-cols-2'>
                         <CardImage>{image}</CardImage>
-                        <CardDescription className="text-gray-200">{description}</CardDescription>
+                        <CardDescription className="text-white font-mono text-5xl">{description}</CardDescription>
+                    </div>
                     </CardHeader>
                 </Card>
 

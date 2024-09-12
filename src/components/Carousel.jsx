@@ -84,7 +84,7 @@ export default function Carousel() {
     return (
         <>
             {/* Carousel Section */}
-            < section className="bg-gray-100 py-16" >
+            < section className="bg-gray-900 py-16" >
                 <div className="container mx-auto px-4 relative">
                     <div className="relative overflow-hidden rounded-lg shadow-xl">
                         <AnimatePresence initial={false}>
@@ -93,7 +93,7 @@ export default function Carousel() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
+                                transition={{ duration: 0.2 }}
                                 className="h-[50vh] md:h-[60vh] relative"
                             >
                                 <img
