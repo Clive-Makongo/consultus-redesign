@@ -21,7 +21,7 @@ export default function AboutCard({ title, description, color, image }) {
     );
 
     const CardDescription = ({ children }) => (
-        <p className="text-2xl font-mono text-gray-600">{children}</p>
+        <p className="text-2xl font-[900] text-gray-600">{children}</p>
     );
 
     const FeatureCard = ({ title, description, color, image }) => (

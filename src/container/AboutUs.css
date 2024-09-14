@@ -1,0 +1,34 @@
+/* Custom styles for the slider */
+.custom-slider {
+    /* Add any custom styles for the slider container */
+}
+
+/* Custom styles for the arrows */
+.custom-arrow {
+    z-index: 1;
+}
+
+.custom-next {
+    right: 10px;
+}
+
+.custom-prev {
+    left: 10px;
+}
+
+/* Custom styles for the dots */
+.custom-dot-class {
+    bottom: -30px;
+}
+
+.custom-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.slick-active .custom-dot {
+    background-color: #333;
+}

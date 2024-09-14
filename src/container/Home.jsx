@@ -12,11 +12,11 @@ function Home() {
             <Hero/>
 
             {/* What We Do Header */}
-            <section className="py-10 bg-gray-100">
+            <section className="pt-10 bg-gray-100">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-8 text-gray-800">
                         <span className="relative inline-block">
-                            <span className="relative z-10">What We Do</span>
+                            <span className="relative z-10">Our Principles</span>
                         </span>
                     </h2>
                     
