@@ -22,8 +22,8 @@ const NextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div
-            className={`${className} custom-arrow custom-next`}
-            style={{ ...style, display: "block", background: "gray" }}
+            className={`${className} custom-arrow custom-next rounded-full`}
+            style={{ ...style, display: "block", background: "black" }}
             onClick={onClick}
         />
     );
@@ -33,8 +33,8 @@ const PrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div
-            className={`${className} custom-arrow custom-prev`}
-            style={{ ...style, display: "block", background: "gray" }}
+            className={`${className} custom-arrow rounded-full custom-prev`}
+            style={{ ...style, display: "block", background: "black" }}
             onClick={onClick}
         />
     );
@@ -77,7 +77,7 @@ export default function AboutUs() {
                                 description={el.description}
                                 title={el.title}
                                 image={images[index]}
-                                color="bg-blue-500"
+                                
                             />
                         </div>
                     </div>
