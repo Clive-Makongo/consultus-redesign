@@ -14,12 +14,14 @@ export default function AboutCard({ title, description, color, image }) {
             />
             <div className={`absolute inset-0 ${color} opacity-60 z-10`} />
             <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2  bg-opacity-70 p-2 rounded">
-                    {title}
-                </h3>
-                <p className="text-lg md:text-xl text-black font-medium leading-relaxed bg-white bg-opacity-70 p-2 rounded">
-                    {description}
-                </p>
+                <div className="shader-background rounded-lg p-4 space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-[900] text-black">
+                        {title}
+                    </h3>
+                    <p className="text-lg md:text-xl font-semibold text-black leading-relaxed">
+                        {description}
+                    </p>
+                </div>
             </div>
         </motion.div>
     );
