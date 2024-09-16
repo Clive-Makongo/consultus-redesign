@@ -8,7 +8,7 @@ import a2 from '../assets/images/about-us-img2.jpg';
 import a3 from '../assets/images/about-us-img3.jpg';
 import a4 from '../assets/images/about-us-img4.jpg';
 import a5 from '../assets/images/about-us-img5.jpg';
-import a6 from '../assets/images/about-us-img6.jpg';
+import a6 from '../assets/images/meeting-room.jpeg';
 import a7 from '../assets/images/about-us-img7.png';
 
 // Don't forget to import the CSS for react-slick
@@ -34,7 +34,7 @@ const PrevArrow = (props) => {
     return (
         <div
             className={`${className} custom-arrow rounded-full custom-prev`}
-            style={{ ...style, display: "block", background: "black" }}
+            style={{ ...style, display: "block", background: "gray" }}
             onClick={onClick}
         />
     );

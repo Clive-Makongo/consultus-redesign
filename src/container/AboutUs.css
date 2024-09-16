@@ -1,6 +1,6 @@
 /* Custom styles for the slider */
 .shader-background {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(5, 5, 5, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -39,4 +39,22 @@
 
 .slick-active .custom-dot {
     background-color: #333;
+}
+
+/* New Slider Styles */
+.shader {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.hero-bar {
+    transition: width 0.3s ease;
+}
+
+.gallery-cell--text {
+    max-width: 80%;
+}
+
+/* Hover effect for the hero bar */
+.gallery-cell:hover .hero-bar {
+    width: 64px;
 }

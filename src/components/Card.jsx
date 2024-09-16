@@ -1,26 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function AboutCard({ title, description, color, image }) {
+export default function AboutCard({ title, description, image }) {
     return (
         <motion.div
-            whileHover={{ scale: 1.015 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full h-[400px] md:h-[300px] lg:h-[400px] relative overflow-hidden rounded-xl shadow-lg"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            className="w-full h-[60vh] relative overflow-hidden"
+            style={{
+                background: `url(${image}) center center / cover no-repeat`
+            }}
         >
-            <div
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: `url(${image})` }}
-            />
-            <div className={`absolute inset-0 ${color} opacity-60 z-10`} />
-            <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
-                <div className="shader-background rounded-lg p-4 space-y-2">
-                    <h3 className="text-2xl md:text-3xl font-[900] text-black">
-                        {title}
-                    </h3>
-                    <p className="text-lg md:text-xl font-semibold text-black leading-relaxed">
-                        {description}
-                    </p>
+            <div className="shader absolute inset-0 flex items-end p-8">
+                <div className="gallery-cell--text">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h2>
+                    <span className="hero-bar block w-16 h-1 bg-white mb-4"></span>
+                    <p className="gallery-subhead text-xl text-white">{description}</p>
                 </div>
             </div>
         </motion.div>
