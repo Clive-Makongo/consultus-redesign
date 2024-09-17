@@ -3,15 +3,13 @@ import Slider from "react-slick";
 import AboutCard from '../components/Card';
 import aboutCardData from "../utils/CardData";
 import './AboutUs.css'
-import a1 from '../assets/images/about-us-img1.PNG';
-import a2 from '../assets/images/about-us-img2.jpg';
-import a3 from '../assets/images/about-us-img3.jpg';
-import a4 from '../assets/images/about-us-img4.jpg';
+import a1 from '../assets/images/eu-turk-flag.jpg';
+import a2 from '../assets/images/fidic.png';
+import a3 from '../assets/images/prag1.jpg';
+import a4 from '../assets/images/construction.jpeg';
 import a5 from '../assets/images/about-us-img5.jpg';
 import a6 from '../assets/images/meeting-room.jpeg';
 import a7 from '../assets/images/about-us-img7.png';
-
-// Don't forget to import the CSS for react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -34,7 +32,7 @@ const PrevArrow = (props) => {
     return (
         <div
             className={`${className} custom-arrow rounded-full custom-prev`}
-            style={{ ...style, display: "block", background: "gray" }}
+            style={{ ...style, display: "block", background: "black" }}
             onClick={onClick}
         />
     );
@@ -48,7 +46,7 @@ export default function AboutUs() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 6000,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
