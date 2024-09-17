@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import AboutCard from '../components/Card';
 import aboutCardData from "../utils/CardData";
+import { NextArrow, PrevArrow } from "../components/Arrows";
 import './AboutUs.css'
 import a1 from '../assets/images/eu-turk-flag.jpg';
 import a2 from '../assets/images/fidic.png';
@@ -16,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 const images = [a1, a2, a3, a4, a5, a6, a7];
 
 // Custom arrow components
-const NextArrow = (props) => {
+const NextArrowOld = (props) => {
     const { className, style, onClick } = props;
     return (
         <div
@@ -27,7 +28,7 @@ const NextArrow = (props) => {
     );
 };
 
-const PrevArrow = (props) => {
+const PrevArrowOld = (props) => {
     const { className, style, onClick } = props;
     return (
         <div

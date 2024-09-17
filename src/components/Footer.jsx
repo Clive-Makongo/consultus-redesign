@@ -3,13 +3,13 @@ import logo from '../assets/images/favicon.ico'
 
 function Footer() {
     return (
-        <footer className="bg-gray-800 text-white py-8 font-mono">
+        <footer className="bg-gray-800 text-white py-8">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo and About Section */}
                     <div>
                         <Link to="/" className="flex items-center mb-4">
-                            <img src={logo} alt="Logo" className="h-10 w-10 mr-2" /> {/* Replace with your logo */}
+                            <img src={logo} alt="Logo" className="h-10 w-10 mr-2" /> 
                             <span className="text-2xl font-bold">ConsultUs Global</span>
                         </Link>
                         <p className="text-gray-400">
