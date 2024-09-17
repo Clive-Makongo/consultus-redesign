@@ -7,7 +7,7 @@ import a1 from '../assets/images/eu-turk-flag.jpg';
 import a2 from '../assets/images/fidic.png';
 import a3 from '../assets/images/prag1.jpg';
 import a4 from '../assets/images/construction.jpeg';
-import a5 from '../assets/images/about-us-img5.jpg';
+import a5 from '../assets/images/feasability.jpg';
 import a6 from '../assets/images/meeting-room.jpeg';
 import a7 from '../assets/images/about-us-img7.png';
 import "slick-carousel/slick/slick.css";

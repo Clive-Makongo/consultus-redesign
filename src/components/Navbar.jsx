@@ -47,7 +47,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="hidden md:flex space-x-4 items-center">
-                        {['Home', 'About Us', 'Contact Us', 'Goals'].map((item) => (
+                        {['Home', 'About Us', 'Goals','Contact Us'].map((item) => (
                             <motion.div
                                 key={item}
                                 whileHover={{ scale: 1.1 }}
