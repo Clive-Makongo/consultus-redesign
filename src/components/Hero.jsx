@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import bgImage from '../assets/images/bg-image.jpeg'
-
+import '../container/AboutUs.css'
 
 export default function Hero() {
     
@@ -24,7 +24,7 @@ export default function Hero() {
                     <h1
                         className="text-4xl md:text-5xl font-bold mb-4 rounded-lg"
                         style={{
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
                             padding: '5px 1px',
                             borderRadius: '5px',
                         }}

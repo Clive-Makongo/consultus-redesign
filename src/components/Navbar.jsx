@@ -35,8 +35,8 @@ const Navbar = () => {
         <nav className="bg-gray-800 sticky top-0 z-50 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
-                    <div className="flex items-center">
-                        <Link to="/">
+                    <div className="flex flex-row items-center">
+                        <Link className="flex flex-row items-center" to="/">
                             <motion.img
                                 src={icon}
                                 alt="Logo"
@@ -44,8 +44,12 @@ const Navbar = () => {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                             />
+                            <p className='text-white font-bold'>
+                                ConsultUs Global
+                            </p>
                         </Link>
                     </div>
+                    
                     <div className="hidden md:flex space-x-4 items-center">
                         {['Home', 'About Us', 'Goals','Contact Us'].map((item) => (
                             <motion.div

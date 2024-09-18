@@ -7,7 +7,6 @@ const ContactInfo = () => {
             <h1 className="title">Contact Us</h1>
 
             <div className="card">
-                <h2 className="card-title">Get in Touch</h2>
                 <div className="card-content">
                     <div className="info-item">
                         <svg xmlns="http://www.w3.org/2000/svg" className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
