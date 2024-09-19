@@ -106,13 +106,13 @@ export default function Carousel() {
     };
 
     return (
-        <section className="bg-gray-100 py-16">
+        <section className="bg-gray-100 py-16 rounded-lg">
             <div className="container mx-auto px-4 relative">
                 <Slider {...settings}>
                     {slides.map((slide) => (
-                        <div key={slide.id} className="relative h-[50vh] md:h-[60vh]">
+                        <div key={slide.id} className="relative h-[50vh] md:h-[60vh] rounded-lg">
                             <img
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-cover rounded-lg"
                                 src={isSmallScreen ? slide.imageXs : slide.imageLg}
                                 alt={`${slide.title} slide`}
                             />
