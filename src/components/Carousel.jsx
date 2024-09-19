@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Slider from "react-slick";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import GreenJobs from '../assets/images/Green-Jobs.png';
 import GreenJobsXS from '../assets/images/green-jobs-xs.png';
@@ -11,6 +11,10 @@ import EnergyEfficiency from '../assets/images/energy-efficiency-cli.png';
 import EnergyEfficiencyXS from '../assets/images/energy-eff-xs.png';
 import EUFlags from '../assets/images/eu-flags.png';
 import EUFlagsXS from '../assets/images/eu-xs.png';
+
+// Make sure to import the CSS files in your main App.js or index.js:
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 const slides = [
     {
@@ -59,24 +63,25 @@ const slides = [
     },
 ];
 
+const NextArrow = ({ onClick }) => (
+    <button
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition z-10"
+        onClick={onClick}
+    >
+        <ChevronRightIcon className="h-6 w-6" />
+    </button>
+);
 
-const variants = {
-    enter: (direction) => ({
-        x: direction > 0 ? '100%' : '-100%',
-        opacity: 0,
-    }),
-    center: {
-        x: 0,
-        opacity: 1,
-    },
-    exit: (direction) => ({
-        x: direction < 0 ? '100%' : '-100%',
-        opacity: 0,
-    }),
-};
+const PrevArrow = ({ onClick }) => (
+    <button
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition z-10"
+        onClick={onClick}
+    >
+        <ChevronLeftIcon className="h-6 w-6" />
+    </button>
+);
 
 export default function Carousel() {
-    const [[page, direction], setPage] = useState([0, 0]);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
@@ -86,74 +91,40 @@ export default function Carousel() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const paginate = (newDirection) => {
-        setPage(([currentPage, _]) => [
-            (currentPage + newDirection + slides.length) % slides.length,
-            newDirection
-        ]);
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
+        adaptiveHeight: true,
     };
 
     return (
         <section className="bg-gray-100 py-16">
             <div className="container mx-auto px-4 relative">
-                <div className="relative overflow-hidden rounded-lg shadow-xl h-[50vh] md:h-[60vh]">
-                    <AnimatePresence initial={false} custom={direction}>
-                        <motion.div
-                            key={page}
-                            custom={direction}
-                            variants={variants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            transition={{
-                                x: { type: "spring", stiffness: 300, damping: 30 },
-                                opacity: { duration: 0.2 }
-                            }}
-                            className="absolute w-full h-full"
-                        >
+                <Slider {...settings}>
+                    {slides.map((slide) => (
+                        <div key={slide.id} className="relative h-[50vh] md:h-[60vh]">
                             <img
                                 className="h-full w-full object-cover"
-                                src={isSmallScreen ? slides[page].imageXs : slides[page].imageLg}
-                                alt={`${slides[page].title} slide`}
+                                src={isSmallScreen ? slide.imageXs : slide.imageLg}
+                                alt={`${slide.title} slide`}
                             />
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white">
                                 <div className="text-center p-4">
-                                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                                        {slides[page].title}
-                                    </h2>
-                                    <p className="text-sm md:text-base mx-auto max-w-lg">
-                                        {slides[page].description}
-                                    </p>
+                                    <h2 className="text-2xl md:text-3xl font-bold mb-4">{slide.title}</h2>
+                                    <p className="text-sm md:text-base mx-auto max-w-lg">{slide.description}</p>
                                 </div>
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
-
-                {/* Navigation Controls */}
-                <button
-                    className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition"
-                    onClick={() => paginate(-1)}
-                >
-                    <ChevronLeftIcon className="h-6 w-6" />
-                </button>
-                <button
-                    className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2 shadow-lg hover:bg-opacity-100 transition"
-                    onClick={() => paginate(1)}
-                >
-                    <ChevronRightIcon className="h-6 w-6" />
-                </button>
-
-                {/* Slide Indicators */}
-                <div className="flex justify-center mt-4 space-x-2">
-                    {slides.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`h-3 w-3 rounded-full ${page === index ? 'bg-gray-800' : 'bg-gray-400'}`}
-                            onClick={() => setPage([index, index > page ? 1 : -1])}
-                        ></button>
+                        </div>
                     ))}
-                </div>
+                </Slider>
             </div>
         </section>
     );
