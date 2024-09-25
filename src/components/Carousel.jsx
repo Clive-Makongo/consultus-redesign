@@ -96,7 +96,7 @@ export default function Carousel() {
     return (
         <section className="bg-gray-100 py-16">
             <div className="container mx-auto px-4 relative">
-                <div className="relative overflow-hidden rounded-lg shadow-xl h-[50vh] md:h-[60vh]">
+                <div className="relative overflow-hidden rounded-xl shadow-xl h-[50vh] md:h-[60vh]">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={page}
