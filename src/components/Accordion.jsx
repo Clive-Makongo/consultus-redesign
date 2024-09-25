@@ -7,20 +7,31 @@ const AccordionItem = ({ title, children }) => {
 
     return (
         <div className="border-b border-gray-200">
-            <motion.button
-                className="flex justify-between items-center w-full py-4 px-6 text-left"
-                onClick={() => setIsOpen(!isOpen)}
-                whileHover={{ backgroundColor: '#f3f4f6' }}
-                whileTap={{ scale: 0.98 }}
+            <motion.div
+                className="relative rounded-xl"
+                initial={false}
+                animate={{ backgroundColor: isOpen ? '#f3f4f6' : '#ffffff' }}
+                whileHover={{ backgroundColor: "#f3f4f6", scale: 0.98 }}
             >
-                <span className="font-medium">{title}</span>
                 <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 bg-gray-100"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ scale: 0.8 }}
+                    transition={{ duration: 0.2 }}
+                />
+                <button
+                    className="flex justify-between items-center w-full py-4 px-6 text-left relative z-10"
+                    onClick={() => setIsOpen(!isOpen)}
                 >
-                    <ChevronDown size={20} />
-                </motion.div>
-            </motion.button>
+                    <span className="font-medium">{title}</span>
+                    <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <ChevronDown size={20} />
+                    </motion.div>
+                </button>
+            </motion.div>
             <AnimatePresence initial={false}>
                 {isOpen && (
                     <motion.div
@@ -40,7 +51,6 @@ const AccordionItem = ({ title, children }) => {
         </div>
     );
 };
-
 
 const Accordion = ({ items }) => {
     return (
