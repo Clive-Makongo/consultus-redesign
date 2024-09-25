@@ -108,11 +108,11 @@ export default function Carousel() {
     return (
         <section className="bg-gray-100 py-16 rounded-lg">
             <div className="container mx-auto px-4 relative">
-                <Slider {...settings}>
+                <Slider {...settings} className='rounded-xl overflow-hidden'>
                     {slides.map((slide) => (
-                        <div key={slide.id} className="relative h-[50vh] md:h-[60vh] rounded-lg">
+                        <div key={slide.id} className="relative h-[50vh] md:h-[60vh] rounded-xl overflow-hidden">
                             <img
-                                className="h-full w-full object-cover rounded-lg"
+                                className="h-full w-full object-cover"
                                 src={isSmallScreen ? slide.imageXs : slide.imageLg}
                                 alt={`${slide.title} slide`}
                             />
