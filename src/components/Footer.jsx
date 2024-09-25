@@ -1,93 +1,57 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/favicon.ico';
 
 function Footer() {
     return (
-        <footer className="bg-gray-800 text-white py-8">
+        <footer className="bg-gray-800 text-white py-12">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Logo and About Section */}
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                         <Link to="/" className="flex items-center mb-4">
-                            <img src="/vite.svg" alt="Logo" className="h-10 w-10 mr-2" /> {/* Replace with your logo */}
-                            <span className="text-2xl font-bold">Your Brand</span>
+                            <img src={logo} alt="Logo" className="h-12 w-12 mr-3" />
+                            <span className="text-2xl font-bold">ConsultUs Global</span>
                         </Link>
-                        <p className="text-gray-400">
-                            Your Brand is committed to providing the best services and products to our customers.
+                        <p className="text-gray-400 text-center md:text-left mt-2">
+                            Empowering global progress through expert consultancy services.
                         </p>
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                         <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about-us" className="text-gray-400 hover:text-white">About Us</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact-us" className="text-gray-400 hover:text-white">Contact Us</Link>
-                            </li>
-                            <li>
-                                <Link to="/goals" className="text-gray-400 hover:text-white">Goals</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4">Services</h4>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 1</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 2</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 3</Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="text-gray-400 hover:text-white">Service 4</Link>
-                            </li>
-                        </ul>
+                        <nav>
+                            <ul className="space-y-2">
+                                <li><Link to="/" className="text-gray-400 hover:text-white transition duration-300">Home</Link></li>
+                                <li><Link to="/about-us" className="text-gray-400 hover:text-white transition duration-300">About Us</Link></li>
+                                <li><Link to="/contact-us" className="text-gray-400 hover:text-white transition duration-300">Contact Us</Link></li>
+                                <li><Link to="/goals" className="text-gray-400 hover:text-white transition duration-300">Goals</Link></li>
+                            </ul>
+                        </nav>
                     </div>
 
                     {/* Contact Information */}
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                         <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-                        <p className="text-gray-400">123 Street Name, City, State, Zip</p>
-                        <p className="text-gray-400">Email: info@yourbrand.com</p>
-                        <p className="text-gray-400">Phone: (123) 456-7890</p>
+                        <address className="text-gray-400 not-italic text-center md:text-left">
+                            <p className="font-semibold">Ankara Office</p>
+                            <p>KIZILIRMAK MAH.</p>
+                            <p>1443 CAD. NO:25 B</p>
+                            <p>IÇ KAPI NO: 8</p>
+                            <p>ÇANKAYA/ANKARA/TÜRKIYE</p>
+                            <p className="mt-2">
+                                <a href="mailto:info@consultus.com.tr" className="hover:text-white transition duration-300">
+                                    info@consultus.com.tr
+                                </a>
+                            </p>
+                        </address>
                     </div>
                 </div>
 
-                {/* Social Media Links */}
-                <div className="mt-8 flex justify-center space-x-6">
-                    <Link to="/" className="text-gray-400 hover:text-white">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            {/* Replace with actual icons */}
-                            <path d="M18 2h-3.01a4 4 0 00-4 4V9h-2v3h2v10h3V12h2.8l.2-3h-3V6a1 1 0 011-1h2V2z" />
-                        </svg>
-                    </Link>
-                    <Link to="/" className="text-gray-400 hover:text-white">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            {/* Replace with actual icons */}
-                            <path d="M18 2h-3.01a4 4 0 00-4 4V9h-2v3h2v10h3V12h2.8l.2-3h-3V6a1 1 0 011-1h2V2z" />
-                        </svg>
-                    </Link>
-                    <Link to="/" className="text-gray-400 hover:text-white">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            {/* Replace with actual icons */}
-                            <path d="M18 2h-3.01a4 4 0 00-4 4V9h-2v3h2v10h3V12h2.8l.2-3h-3V6a1 1 0 011-1h2V2z" />
-                        </svg>
-                    </Link>
-                </div>
-
                 {/* Copyright */}
-                <div className="mt-8 text-center text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} Your Brand. All rights reserved.</p>
+                <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                    <p>&copy; {new Date().getFullYear()} ConsultUs Global. All rights reserved.</p>
                 </div>
             </div>
         </footer>
