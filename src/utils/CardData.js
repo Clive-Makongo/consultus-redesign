@@ -1,7 +1,7 @@
 const aboutCardData = [
     {
         title: "Experience",
-        description: "We bring a wealth of experience in managing and overseeing various aspects of international and local infrastructure projects, particularly in the field of water and wastewater systems. With a combined experience of over 20 years, we have successfully navigated the intricacies of projects falling under the umbrella of the Department of European Union Financial Assistance at the Ministry of Environment, Urbanization, and Climate Change.",
+        description: "We bring a wealth of experience in managing various aspects of international and local infrastructure projects. With a combined experience of over 20 years, we have successfully navigated projects falling under the umbrella of the Department of European Union Financial Assistance at the Ministry of Environment, Urbanization, and Climate Change.",
         color: "bg-blue-500",
         image: "/assets/images/about-us-img1.PNG"
     },
