@@ -15,7 +15,7 @@ export default function AboutCard({ title, description, image }) {
                 <div className="gallery-cell--text">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h2>
                     <span className="hero-bar block w-16 h-1 bg-white mb-4"></span>
-                    <p className="gallery-subhead text-xl text-white">{description}</p>
+                    <p className="gallery-subhead text-sm text-white md:text-xl">{description}</p>
                 </div>
             </div>
         </motion.div>
