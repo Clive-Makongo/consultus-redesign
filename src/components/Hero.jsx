@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import bgImage from '../assets/images/bg-image.jpg'
+import bgImage from '../assets/images/bg-image(1).jpeg'
 import '../container/AboutUs.css'
 
 export default function Hero() {
